@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+
+  /* Brand Colors - Based on "Logo Vert/Bleu" */
+  /* Deep Navy Blue for Trust/Architecture */
+  --color-primary: #0f172a; /* Slate 900 */
+  --color-primary-foreground: #f8fafc;
+
+  /* Vibrant Green for Energy/Eco */
+  --color-secondary: #10b981; /* Emerald 500 */
+  --color-secondary-foreground: #ffffff;
+
+  /* Neutrals */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+
+  --color-muted: #f1f5f9; /* Slate 100 */
+  --color-muted-foreground: #64748b; /* Slate 500 */
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0f172a;
+
+  --color-border: #e2e8f0; /* Slate 200 */
+  --color-input: #e2e8f0;
+  --color-ring: #0f172a;
+
+  /* Radius - Modern & Soft */
+  --radius-xl: 1rem;
+  --radius-lg: 0.75rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+  
+  --animate-scroll: scroll 80s linear infinite;
+  
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-lg border border-white/20;
+  }
+  
+  .container-px {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-centered {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
