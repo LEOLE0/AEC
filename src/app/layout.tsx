@@ -11,6 +11,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AEC – Audit Énergétique Conseil",
   description: "Expertise réglementaire et technique pour vos projets de rénovation énergétique.",
+  icons: {
+    icon: "/LOGO.png",
+  },
 };
 
 import { Navbar } from "@/components/layout/navbar";
