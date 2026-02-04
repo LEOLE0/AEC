@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Téléphone</p>
-                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">+33 1 23 45 67 89</p>
+                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">01 23 45 67 89</p>
                   </div>
                 </a>
 
