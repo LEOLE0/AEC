@@ -77,7 +77,7 @@ export function Footer() {
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-400 group">
                   <MapPin className="h-5 w-5 text-emerald-500 mt-0.5 group-hover:text-emerald-400 transition-colors" />
-                  <span>10 Rue de la Paix<br/>75002 Paris, France</span>
+                  <span>6 rue d’Armaillé<br/>75017 Paris, France</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-400 group">
                   <Phone className="h-5 w-5 text-emerald-500 group-hover:text-emerald-400 transition-colors" />

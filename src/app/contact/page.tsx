@@ -1,13 +1,24 @@
 "use client"
 
+import * as React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Phone, ArrowRight, MessageSquare } from "lucide-react"
+import { Mail, MapPin, Phone, ArrowRight, MessageSquare, CheckCircle2 } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function ContactPage() {
+  const [isSubmitted, setIsSubmitted] = React.useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitted(true)
+    }, 1000)
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 pt-32 pb-20">
       <div className="container-centered">
@@ -82,7 +93,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Bureau</p>
-                    <p className="text-lg font-semibold">10 Rue de la Paix<br/>75002 Paris, France</p>
+                    <p className="text-lg font-semibold">6 rue d’Armaillé<br/>75017 Paris, France</p>
                   </div>
                 </div>
               </div>
@@ -109,47 +120,68 @@ export default function ContactPage() {
             transition={{ delay: 0.4 }}
             className="lg:col-span-7"
           >
-            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-slate-100">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <h3 className="text-2xl font-bold text-primary">Envoyez-nous un message</h3>
-              </div>
-
-              <form className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="firstname" className="text-slate-600 font-medium">Prénom</Label>
-                    <Input id="firstname" placeholder="Jean" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
+            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-slate-100 min-h-[600px] flex flex-col justify-center">
+              {isSubmitted ? (
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center justify-center text-center space-y-6"
+                >
+                  <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="w-10 h-10 text-emerald-600" />
                   </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="lastname" className="text-slate-600 font-medium">Nom</Label>
-                    <Input id="lastname" placeholder="Dupont" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="email" className="text-slate-600 font-medium">Email professionnel</Label>
-                  <Input id="email" type="email" placeholder="jean.dupont@entreprise.com" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="company" className="text-slate-600 font-medium">Entreprise / Organisme</Label>
-                  <Input id="company" placeholder="Votre société" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="text-slate-600 font-medium">Votre projet</Label>
-                  <Textarea id="message" className="min-h-[180px] bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl resize-none p-4" placeholder="Décrivez vos besoins (Audit, DPE, Stratégie carbone...)" />
-                </div>
-
-                <div className="pt-4">
-                  <Button type="submit" className="w-full h-14 text-lg font-semibold bg-primary hover:bg-slate-800 text-white rounded-xl transition-all shadow-lg hover:shadow-xl">
-                    Envoyer le message
+                  <h3 className="text-3xl font-bold text-primary">Message envoyé !</h3>
+                  <p className="text-slate-500 max-w-md text-lg leading-relaxed">
+                    Merci de nous avoir contactés. Notre équipe a bien reçu votre demande et reviendra vers vous sous 24h ouvrées.
+                  </p>
+                  <Button onClick={() => window.location.href = "/"} className="rounded-full mt-6 bg-primary hover:bg-slate-800 text-white px-8 h-12 text-lg">
+                    Retour à l&apos;accueil
                   </Button>
-                </div>
-              </form>
+                </motion.div>
+              ) : (
+                <>
+                  <div className="flex items-center gap-3 mb-8">
+                    <div className="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600">
+                      <MessageSquare className="w-5 h-5" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-primary">Envoyez-nous un message</h3>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid sm:grid-cols-2 gap-6">
+                      <div className="space-y-2">
+                        <Label htmlFor="firstname" className="text-slate-600 font-medium">Prénom</Label>
+                        <Input id="firstname" required placeholder="Jean" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="lastname" className="text-slate-600 font-medium">Nom</Label>
+                        <Input id="lastname" required placeholder="Dupont" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email" className="text-slate-600 font-medium">Email professionnel</Label>
+                      <Input id="email" type="email" required placeholder="jean.dupont@entreprise.com" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="company" className="text-slate-600 font-medium">Entreprise / Organisme</Label>
+                      <Input id="company" placeholder="Votre société" className="h-12 bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl" />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message" className="text-slate-600 font-medium">Votre projet</Label>
+                      <Textarea id="message" required className="min-h-[180px] bg-slate-50 border-slate-200 focus:ring-emerald-500 focus:border-emerald-500 rounded-xl resize-none p-4" placeholder="Décrivez vos besoins (Audit, DPE, Stratégie carbone...)" />
+                    </div>
+
+                    <div className="pt-4">
+                      <Button type="submit" className="w-full h-14 text-lg font-semibold bg-primary hover:bg-slate-800 text-white rounded-xl transition-all shadow-lg hover:shadow-xl">
+                        Envoyer le message
+                      </Button>
+                    </div>
+                  </form>
+                </>
+              )}
             </div>
           </motion.div>
         </div>
