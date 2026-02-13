@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={ref} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden rounded-b-[3rem]">
         <motion.div 
           style={{ y: backgroundY }}
           className="absolute inset-0 z-0"
