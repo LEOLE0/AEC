@@ -36,6 +36,7 @@ export function Footer() {
                  src="/LOGO.png" 
                  alt="Logo AEC" 
                  fill 
+                 sizes="80px"
                  className="object-contain brightness-0 invert"
                />
             </Link>

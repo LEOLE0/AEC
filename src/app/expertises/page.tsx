@@ -4,49 +4,49 @@ import { ShieldCheck, LineChart, Banknote, HardHat, FileText, Leaf } from "lucid
 export default function ExpertisesPage() {
   const expertises = [
     {
-      title: "Audit Réglementaire & Tertiaire",
+      title: "Ingénierie & Audit Technique",
       icon: ShieldCheck,
-      description: "Mise en conformité avec les obligations légales (Décret Tertiaire, Décret BACS).",
-      features: ["Audit Énergétique Réglementaire", "DPE Collectif & Tertiaire", "Déclaration OPERAT", "Schéma Directeur Énergie"]
+      description: "Diagnostics approfondis de vos installations et conformité réglementaire.",
+      features: ["Audit Énergétique Réglementaire", "Diagnostic Technique Global (DTG)", "Audit des installations CVC", "Décret Tertiaire & BACS"]
     },
     {
-      title: "Ingénierie Financière",
-      icon: Banknote,
-      description: "Optimisation du financement de vos travaux via les dispositifs d'aides.",
-      features: ["Certificats d'Économies d'Énergie (CEE)", "MaPrimeRénov' Copropriété", "Fonds Chaleur ADEME", "Prêts bonifiés & Tiers Financement"]
-    },
-    {
-      title: "Assistance à Maîtrise d'Ouvrage",
+      title: "Maîtrise d'Œuvre (MOE) & AMO",
       icon: HardHat,
-      description: "Accompagnement technique et administratif de la conception à la réception.",
-      features: ["Programmation technique", "Consultation des entreprises", "Suivi d'exécution", "Commissionnement des installations"]
+      description: "Pilotage technique et administratif complet de vos projets de rénovation.",
+      features: ["Conception & Études d'exécution", "Consultation des entreprises (DCE)", "Suivi & Réception de travaux", "Commissionnement"]
     },
     {
-      title: "Stratégie Bas Carbone",
+      title: "Ingénierie Financière & CEE",
+      icon: Banknote,
+      description: "Maximisation des aides et subventions pour financer vos projets.",
+      features: ["Montage dossiers CEE", "MaPrimeRénov' & Fonds Chaleur", "Tiers Financement", "Calcul de ROI & VAN"]
+    },
+    {
+      title: "Décarbonation & Environnement",
       icon: Leaf,
-      description: "Réduction de l'empreinte environnementale de votre parc immobilier.",
-      features: ["Bilan Carbone", "Analyse de Cycle de Vie (ACV)", "Intégration des EnR (Solaire, Géothermie)", "Biodiversité urbaine"]
+      description: "Stratégies de réduction de l'empreinte carbone et valorisation verte.",
+      features: ["Bilan Carbone® (Méthode ADEME)", "Stratégie de décarbonation", "Intégration des EnR", "Certifications (BREEAM, HQE)"]
     },
     {
-      title: "Contrats de Performance",
+      title: "Monitoring & Performance",
       icon: LineChart,
-      description: "Pilotage et suivi des engagements de performance énergétique (CPE).",
-      features: ["Suivi des consommations (IPMVP)", "Optimisation des contrats d'exploitation", "Monitoring & GTB", "Sensibilisation des occupants"]
+      description: "Suivi en temps réel et pilotage de la performance énergétique.",
+      features: ["Monitoring multi-fluides", "Suivi des indicateurs (IPE/KPI)", "Contrat de Performance (CPE)", "Energy Management"]
     },
     {
-      title: "Certifications & Labels",
+      title: "Smart Building & GTB",
       icon: FileText,
-      description: "Valorisation de votre patrimoine par des certifications reconnues.",
-      features: ["BREEAM In-Use", "HQE Exploitation", "Label BBC Rénovation", "WiredScore"]
+      description: "Optimisation du pilotage des bâtiments connectés.",
+      features: ["Audit des systèmes GTB/GTC", "Conformité Décret BACS", "IoT & Capteurs connectés", "Pilotage à distance"]
     }
   ]
 
   return (
     <div className="container-centered py-12 space-y-16 pt-32">
       <div className="text-center max-w-3xl mx-auto space-y-4">
-        <h1 className="text-4xl font-bold text-primary">Nos Expertises</h1>
+        <h1 className="text-4xl font-bold text-primary">Nos Domaines d&apos;Intervention</h1>
         <p className="text-lg text-muted-foreground">
-          AEC déploie une offre de services complète pour sécuriser vos décisions et maximiser la performance de vos actifs immobiliers.
+          AEC met à votre disposition une équipe d&apos;ingénieurs pluridisciplinaires pour intervenir sur toute la chaîne de valeur de la performance énergétique.
         </p>
       </div>
 

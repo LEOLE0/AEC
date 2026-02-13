@@ -120,7 +120,7 @@ export default function ContactPage() {
             transition={{ delay: 0.4 }}
             className="lg:col-span-7"
           >
-            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-slate-100 min-h-[600px] flex flex-col justify-center">
+            <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-slate-100 min-h-[500px] lg:min-h-[600px] flex flex-col justify-center">
               {isSubmitted ? (
                 <motion.div 
                   initial={{ opacity: 0, scale: 0.9 }}

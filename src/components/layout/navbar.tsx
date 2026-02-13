@@ -12,6 +12,7 @@ const navigation = [
   { name: "Accueil", href: "/" },
   { name: "Expertises", href: "/expertises" },
   { name: "Méthodologie", href: "/methodologie" },
+  { name: "Blog", href: "/blog" },
   { name: "À propos", href: "/a-propos" },
   { name: "Contact", href: "/contact" },
 ]
@@ -33,6 +34,7 @@ export function Navbar() {
                 src="/LOGO.png" 
                 alt="Logo AEC" 
                 fill 
+                sizes="(max-width: 640px) 32px, 44px"
                 className="object-contain"
                 priority
               />

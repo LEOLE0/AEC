@@ -35,8 +35,8 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold tracking-tight"
           >
-            Plus qu&apos;un audit, <br/>
-            <span className="text-emerald-400">une vision.</span>
+            L&apos;Ingénierie de la <br/>
+            <span className="text-emerald-400">Maîtrise Énergétique.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
@@ -44,7 +44,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl font-light text-slate-200 max-w-2xl mx-auto"
           >
-            Depuis 2012, nous réconcilions performance énergétique et réalité économique pour valoriser votre patrimoine.
+            Bureau d&apos;études technique spécialisé dans la performance énergétique et la décarbonation des sites et équipements.
           </motion.p>
         </div>
       </section>
@@ -54,17 +54,17 @@ export default function AboutPage() {
         <div className="container-centered grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="inline-block rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700">
-              Notre Manifeste
+              Notre Mission
             </div>
             <h2 className="text-4xl font-bold text-primary leading-tight">
-              La transition énergétique ne doit pas être une contrainte.
+              Accompagner la transition énergétique par l&apos;excellence technique.
             </h2>
             <div className="space-y-6 text-lg text-slate-600 font-light leading-relaxed">
               <p>
-                Trop souvent perçue comme une obligation réglementaire lourde, la rénovation énergétique est en réalité le levier le plus puissant pour pérenniser la valeur de vos actifs.
+                AEC intervient sur l&apos;ensemble du territoire pour déployer des missions complètes : de l&apos;audit énergétique à la maîtrise d&apos;œuvre, en passant par l&apos;ingénierie financière.
               </p>
               <p>
-                Chez AEC, nous refusons l&apos;approche &quot;copier-coller&quot;. Chaque bâtiment a son histoire, ses contraintes et son potentiel. Notre mission est de révéler ce potentiel grâce à une ingénierie de pointe et une stratégie financière sur-mesure.
+                Face aux enjeux climatiques et réglementaires (Décret Tertiaire, BACS), nous apportons une réponse structurée, pragmatique et ROIste. Notre objectif : réduire vos consommations et décarboner vos actifs tout en valorisant votre patrimoine.
               </p>
             </div>
           </div>
@@ -88,10 +88,10 @@ export default function AboutPage() {
       <section className="py-20 bg-primary text-white">
         <div className="container-centered grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
           {[
-            { number: "10+", label: "Années d'expérience" },
-            { number: "500+", label: "Audits réalisés" },
-            { number: "2M", label: "m² audités" },
-            { number: "30%", label: "Économies moyennes" },
+            { number: "20+", label: "Années d'expertise" },
+            { number: "5000+", label: "Audits réalisés" },
+            { number: "30", label: "Ingénieurs & Experts" },
+            { number: "25%", label: "Économies moyennes" },
           ].map((stat, i) => (
             <div key={i} className="space-y-2">
               <div className="text-5xl md:text-6xl font-bold text-emerald-400">{stat.number}</div>
@@ -105,29 +105,29 @@ export default function AboutPage() {
       <section className="py-32 bg-slate-50">
         <div className="container-centered">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Nos Piliers</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">Nos Valeurs</h2>
             <p className="text-xl text-slate-500 font-light">
-              Ce qui guide nos décisions et garantit votre satisfaction.
+              Rigueur technique, transparence et engagement de résultat.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Indépendance Totale",
-                desc: "Nous ne vendons ni énergie, ni travaux. Nos recommandations sont 100% objectives et tournées vers votre seul intérêt.",
+                title: "Indépendance & Éthique",
+                desc: "Garantie d'objectivité dans nos préconisations. Nous privilégions toujours l'intérêt du maître d'ouvrage.",
                 icon: ShieldCheck,
                 color: "bg-blue-500"
               },
               {
-                title: "Excellence Technique",
-                desc: "Nos ingénieurs sont formés en continu aux dernières évolutions (BIM, STD, Décret Tertiaire) et certifiés OPQIBI.",
+                title: "Ingénierie de Pointe",
+                desc: "Une équipe pluridisciplinaire formée aux dernières réglementations et technologies (Simulation Thermique Dynamique, BIM).",
                 icon: Lightbulb,
                 color: "bg-amber-500"
               },
               {
-                title: "Engagement Durable",
-                desc: "Nous visons la performance réelle. Pas de greenwashing, mais des résultats mesurables et pérennes.",
+                title: "Décarbonation & Impact",
+                desc: "Un engagement concret pour la réduction des GES et la préservation de l'environnement.",
                 icon: Leaf,
                 color: "bg-emerald-500"
               },

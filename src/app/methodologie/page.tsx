@@ -11,32 +11,32 @@ export default function MethodologyPage() {
     {
       id: "01",
       title: "Diagnostic",
-      subtitle: "L'état des lieux",
-      desc: "Nous scannons votre bâtiment sous toutes les coutures : thermique, technique et usage. Une vision 360° pour ne rien laisser au hasard.",
+      subtitle: "Audit & État des lieux",
+      desc: "Analyse approfondie des systèmes (Bâti, CVC, Usages), instrumentation si nécessaire, et identification précise des gisements d'économies d'énergie.",
       icon: Search,
       color: "from-blue-400 to-blue-600"
     },
     {
       id: "02",
-      title: "Stratégie",
-      subtitle: "Le plan d'attaque",
-      desc: "Scénarios chiffrés, simulations dynamiques et calculs de ROI. Nous transformons les contraintes techniques en opportunités financières.",
+      title: "Conception",
+      subtitle: "Ingénierie & Stratégie",
+      desc: "Modélisation thermique (STD), dimensionnement des équipements, et élaboration de scénarios de travaux chiffrés avec calcul de ROI et TRI.",
       icon: FileBarChart,
       color: "from-indigo-400 to-indigo-600"
     },
     {
       id: "03",
       title: "Financement",
-      subtitle: "L'ingénierie financière",
-      desc: "CEE, MaPrimeRénov', Prêts Verts... Nous allons chercher chaque euro de subvention disponible pour optimiser votre reste à charge.",
+      subtitle: "Ingénierie Financière",
+      desc: "Montage administratif et technique des dossiers de subventions (CEE, MaPrimeRénov', Fonds Chaleur) pour optimiser votre plan de financement.",
       icon: PiggyBank,
       color: "from-emerald-400 to-emerald-600"
     },
     {
       id: "04",
       title: "Réalisation",
-      subtitle: "La mise en œuvre",
-      desc: "De la consultation des entreprises à la réception du chantier, nous sommes votre tiers de confiance technique sur le terrain.",
+      subtitle: "Maîtrise d'Œuvre (MOE)",
+      desc: "Direction de l'exécution des travaux (DET), coordination des entreprises, suivi financier et commissionnement pour garantir la performance réelle.",
       icon: Hammer,
       color: "from-slate-600 to-slate-800"
     }
@@ -49,14 +49,14 @@ export default function MethodologyPage() {
         <div className="container-centered text-center space-y-6">
           <motion.div 
             initial={{ width: 0 }} 
-            animate={{ width: "100px" }} 
+            animate={{ width: 100 }} 
             className="h-1 bg-primary mx-auto"
           />
           <h1 className="text-5xl md:text-7xl font-bold text-primary tracking-tighter">
-            Notre Processus
+            Démarche d&apos;Ingénierie
           </h1>
           <p className="text-xl text-slate-500 font-light max-w-xl mx-auto">
-            Une approche séquentielle pour dérisquer vos investissements.
+            Une méthodologie éprouvée, de l&apos;audit à la garantie de performance.
           </p>
         </div>
       </section>
@@ -78,14 +78,23 @@ export default function MethodologyPage() {
   )
 }
 
-function StepCard({ step, index }: { step: { id: string, title: string, subtitle: string, desc: string, icon: LucideIcon, color: string }, index: number }) {
+interface StepProps {
+  id: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  icon: LucideIcon;
+  color: string;
+}
+
+function StepCard({ step, index }: { step: StepProps, index: number }) {
   return (
     <motion.div 
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true }}
-      className="group relative flex flex-col justify-between p-8 md:p-10 border-b md:border-b-0 md:border-r border-slate-200 last:border-r-0 min-h-[400px] md:h-auto bg-white md:bg-transparent hover:bg-white transition-colors duration-500"
+      className="group relative flex flex-col justify-between p-8 md:p-10 border-b md:border-b-0 md:border-r border-slate-200 last:border-r-0 min-h-[300px] md:h-auto bg-white md:bg-transparent hover:bg-white transition-colors duration-500"
     >
       <div className="space-y-6 relative z-10">
         <div className="flex justify-between items-start">

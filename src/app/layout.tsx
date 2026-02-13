@@ -11,6 +11,21 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "AEC – Audit Énergétique Conseil",
   description: "Expertise réglementaire et technique pour vos projets de rénovation énergétique.",
+  keywords: ["Audit Énergétique", "Rénovation", "Décret Tertiaire", "AMO", "CVC", "Efficacité Énergétique"],
+  authors: [{ name: "AEC Conseil" }],
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://aec-conseil.fr",
+    title: "AEC – Audit Énergétique Conseil",
+    description: "Expertise réglementaire et technique pour vos projets de rénovation énergétique.",
+    siteName: "AEC Conseil",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AEC – Audit Énergétique Conseil",
+    description: "Expertise réglementaire et technique pour vos projets de rénovation énergétique.",
+  },
 };
 
 import { Navbar } from "@/components/layout/navbar";
