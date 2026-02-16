@@ -77,13 +77,13 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="mailto:contact@aec-conseil.fr" className="flex items-start gap-6 group">
+                <a href="mailto:contact@auditenergetiqueconseil.fr" className="flex items-start gap-6 group">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Email</p>
-                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">contact@aec-conseil.fr</p>
+                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">contact@auditenergetiqueconseil.fr</p>
                   </div>
                 </a>
 

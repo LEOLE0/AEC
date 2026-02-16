@@ -9,26 +9,27 @@ export default function AboutPage() {
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end start"]
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"])
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen">
+    <div className="bg-white min-h-screen">
       {/* Hero / Intro */}
-      <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y }} className="absolute inset-0 z-0">
+      <section ref={containerRef} className="relative h-screen flex items-center justify-center overflow-hidden rounded-b-[3rem]">
+        <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
            <Image
              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80"
              alt="Bureaux AEC"
              fill
-             className="object-cover brightness-50"
+             className="object-cover brightness-50 scale-105"
              priority
            />
         </motion.div>
         
-        <div className="container-centered relative z-10 text-center text-white space-y-6">
+        <motion.div style={{ y: textY }} className="container-centered relative z-10 text-center text-white space-y-6 pt-20">
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +47,7 @@ export default function AboutPage() {
           >
             Bureau d&apos;études technique spécialisé dans la performance énergétique et la décarbonation des sites et équipements.
           </motion.p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Manifesto */}

@@ -1,8 +1,8 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, Calendar, Clock, ChevronLeft, ChevronRight, Search } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -13,6 +13,15 @@ const ITEMS_PER_PAGE = 9
 export default function BlogPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchQuery, setSearchQuery] = useState("")
+  
+  const headerRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: headerRef,
+    offset: ["start start", "end start"],
+  })
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"])
 
   // Filter posts based on search
   const filteredPosts = blogPosts.filter(post => 
@@ -37,19 +46,25 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Header Section */}
-      <section className="relative bg-primary pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary to-slate-900 opacity-90" />
+      <section ref={headerRef} className="relative h-screen flex items-center justify-center overflow-hidden rounded-b-[3rem]">
+        <motion.div 
+          style={{ y: backgroundY }}
+          className="absolute inset-0 z-0"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary to-slate-900 opacity-90 z-10" />
           <Image
             src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80"
             alt="Blog Header"
             fill
-            className="object-cover mix-blend-overlay"
+            className="object-cover mix-blend-overlay scale-105"
             priority
           />
-        </div>
+        </motion.div>
         
-        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
+        <motion.div 
+          style={{ y: textY }}
+          className="relative z-20 max-w-4xl mx-auto text-center space-y-6 pt-20 px-4 sm:px-6 lg:px-8"
+        >
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +101,7 @@ export default function BlogPage() {
               />
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Blog Grid */}

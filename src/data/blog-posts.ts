@@ -218,7 +218,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "PUE, Free cooling, récupération de chaleur... Optimiser la consommation des infrastructures numériques.",
     date: "20 Octobre 2025",
     category: "Technologie",
-    image: "https://images.unsplash.com/photo-1558494949-ef526b0042a0?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?auto=format&fit=crop&q=80",
     readTime: "5 min"
   },
   {

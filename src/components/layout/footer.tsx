@@ -11,9 +11,9 @@ const footerNavigation = {
     { name: "Contact", href: "/contact" },
   ],
   legal: [
-    { name: "Mentions légales", href: "#" },
-    { name: "Politique de confidentialité", href: "#" },
-    { name: "CGV", href: "#" },
+    { name: "Mentions légales", href: "/mentions-legales" },
+    { name: "Politique de confidentialité", href: "/politique-confidentialite" },
+    { name: "CGV", href: "/cgv" },
   ],
 }
 
@@ -73,20 +73,20 @@ export function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div className="md:col-span-2 xl:col-span-1">
               <h3 className="text-sm font-semibold leading-6 text-white tracking-wider uppercase">Contact</h3>
               <ul role="list" className="mt-6 space-y-4">
                 <li className="flex items-start gap-3 text-sm text-slate-400 group">
-                  <MapPin className="h-5 w-5 text-emerald-500 mt-0.5 group-hover:text-emerald-400 transition-colors" />
+                  <MapPin className="h-5 w-5 text-emerald-500 mt-0.5 flex-shrink-0 group-hover:text-emerald-400 transition-colors" />
                   <span>6 rue d’Armaillé<br/>75017 Paris, France</span>
                 </li>
                 <li className="flex items-center gap-3 text-sm text-slate-400 group">
-                  <Phone className="h-5 w-5 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
-                  <span>+33 1 23 45 67 89</span>
+                  <Phone className="h-5 w-5 text-emerald-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors" />
+                  <span className="whitespace-nowrap">+33 1 23 45 67 89</span>
                 </li>
-                <li className="flex items-center gap-3 text-sm text-slate-400 group">
-                  <Mail className="h-5 w-5 text-emerald-500 group-hover:text-emerald-400 transition-colors" />
-                  <a href="mailto:contact@aec-conseil.fr" className="hover:text-white transition-colors">contact@aec-conseil.fr</a>
+                <li className="flex items-center gap-3 text-sm text-slate-400 group overflow-hidden">
+                  <Mail className="h-5 w-5 text-emerald-500 flex-shrink-0 group-hover:text-emerald-400 transition-colors" />
+                  <a href="mailto:contact@auditenergetiqueconseil.fr" className="hover:text-white transition-colors truncate">contact@auditenergetiqueconseil.fr</a>
                 </li>
               </ul>
             </div>
