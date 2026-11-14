@@ -67,13 +67,13 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold mb-8 relative z-10">Nos Coordonnées</h3>
               
               <div className="space-y-8 relative z-10">
-                <a href="tel:+33123456789" className="flex items-start gap-6 group">
+                <a href="tel:+33184166637" className="flex items-start gap-6 group">
                   <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-emerald-500 transition-colors">
                     <Phone className="w-6 h-6" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-400 mb-1">Téléphone</p>
-                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">01 23 45 67 89</p>
+                    <p className="text-lg font-semibold group-hover:text-emerald-400 transition-colors">01 84 16 66 37</p>
                   </div>
                 </a>
 
